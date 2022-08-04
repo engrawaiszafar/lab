@@ -38,7 +38,7 @@ class Television:
         - It should only work for a TV that is on.
         - If the method is called when one is on the MAX_CHANNEL, it should take the TV channel back to the MIN_CHANNEL.
         """
-        if self.__tv_status == True:
+        if self.__tv_status:
             if self.__tv_channel >= Television.MAX_CHANNEL:
                 self.__tv_channel = Television.MIN_CHANNEL
             else:
@@ -51,7 +51,7 @@ class Television:
         - If the method is called when one is on the MIN_CHANNEL, it should take the TV channel back to the MAX_CHANNEL.
         """
         if self.__tv_status:
-            if self.__tv_channel - 1 <= Television.MIN_CHANNEL:
+            if self.__tv_channel - 1 < Television.MIN_CHANNEL:
                 self.__tv_channel = Television.MAX_CHANNEL
             else:
                 self.__tv_channel -= 1
@@ -62,7 +62,7 @@ class Television:
         - It should only work for a TV that is on.
         - If the method is called when one is on the MAX_VOLUME, the volume should not be adjusted.
         """
-        if self.__tv_status == True:
+        if self.__tv_status:
             if self.__tv_volume >= Television.MAX_VOLUME:
                 self.__tv_volume = self.__tv_volume + 0
             else:
@@ -74,7 +74,7 @@ class Television:
         - It should only work for a TV that is on.
         - If the method is called when one is on the MIN_VOLUME, the volume should not be adjusted.
         """
-        if self.__tv_status == True:
+        if self.__tv_status:
             if self.__tv_volume == Television.MIN_VOLUME:
                 self.__tv_volume = self.__tv_volume + 0
             else:
